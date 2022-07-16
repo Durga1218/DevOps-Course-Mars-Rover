@@ -13,5 +13,5 @@ def index():
 def mars():
     mars_img_list=[]
     response_mars = requests.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=pwJgwXoYoQo3wchIFf32MI9Emb01fBW80Ho4BcCn")
-    data_mars = response_mars.json()["photos"][0]["img_src"]
+    data_mars = response_mars.json()["photos"]
     return render_template('mars.html', mars_img=data_mars)
